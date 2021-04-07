@@ -1,0 +1,14 @@
+#!/bin/bash
+
+let eol=28800 # 8 hours as seconds
+let time_init=$(cat ~/.pwnbox_time)
+let time_now=$(date +%s)
+let diff="$time_init - $time_now"
+let remaining_seconds="$eol + $diff"
+
+let remaining_minutes=(remaining_seconds/60)%60
+let remaining_hours=(remaining_seconds/60)/60
+
+timestamp=$(printf "%d:%02d" $remaining_hours $remaining_minutes)
+
+echo $timestamp
