@@ -1,5 +1,5 @@
 #!/bin/bash
-date +%s > ~/.pwnbox_start
+date +%s > ~/.pwnbox_start_time
 
 mkdir -p ~/bin
 export PATH=~/bin:$PATH
